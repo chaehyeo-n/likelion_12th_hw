@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <div>
+        {% for post in posts %}
+        <div>
+            <hr/>
+            <h3>{{post.title}}</h3>
+            {{post.writer}} | {{post.flavor}}<br>
+            {{post.pub_date}}<br>
+            {{post.summary}}
+            <a href="{% url 'main:detail' post.id %}">자세히 보기</a>
+        </div>
+        {% endfor %}
+    </div><hr/><br>
+
     <img src="{% static 'images/뉴욕치즈케이크.png' %}" alt="뉴욕치즈케이크" width="200px">
     <h2>뉴욕 치즈케이크</h2>
     <div>⭐⭐⭐⭐⭐</div>
@@ -24,7 +37,7 @@
     <img src="{% static 'images/봉쥬르마카롱.png' %}" alt="봉쥬르마카롱" width="200px">
     <h2>봉쥬르, 마카롱</h2>
     <div>⭐⭐⭐⭐</div>
-    <div>최근에 빠진 녀석<br>알바 끝나고 사 먹으면서 가봤다</div>
+    <div>최근에 빠진 아이<br>알바 끝나고 사 먹으면서 가봤다</div>
 
     <img src="{% static 'images/아이스도쿄바나나.png' %}" alt="아이스도쿄바나나" width="200px">
     <h2>아이스 도쿄바나나</h2>
