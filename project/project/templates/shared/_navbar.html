@@ -1,4 +1,19 @@
 <nav class="navbar-container">
     <a class="navbar-link" href="{% url 'main:mainpage' %}">Django MTV</a>
     <a class="navbar-link" href="{% url 'main:baskinrobbins' %}">BaskinRobbins</a>
+
+    <div class="nav-right">
+        {% if user.is_authenticated %}
+        <ul class="nav-link-account">
+            <li class="nav-link-user">{{user.username}}</li>
+            <li><a href="{% url 'accounts:logout' %}">로그아웃</a></li>
+            <li><a href="{% url 'users:mypage' %}">mypage</a></li>
+        </ul>
+        {% else %}
+        <ul class="nav-link-account">
+            <li><a href="{% url 'accounts:login' %}">로그인</a></li>
+            <li><a href="{% url 'accounts:signup' %}">signup</a></li>
+        </ul>
+        {% endif %}
+    </div>
 </nav>

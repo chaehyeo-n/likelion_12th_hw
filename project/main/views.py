@@ -27,7 +27,7 @@ def create(request):
     new_post = Post()
 
     new_post.title = request.POST['title']
-    new_post.writer = request.POST['writer']
+    new_post.writer = request.user
     new_post.flavor = request.POST['flavor']
     new_post.body = request.POST['body']
     new_post.pub_date = timezone.now()
@@ -41,7 +41,7 @@ def update(request, id):
     update_post = Post.objects.get(pk=id)
 
     update_post.title = request.POST['title']
-    update_post.writer = request.POST['writer']
+    update_post.writer = request.user
     update_post.flavor = request.POST['flavor']
     update_post.body = request.POST['body']
     update_post.pub_date = timezone.now()
