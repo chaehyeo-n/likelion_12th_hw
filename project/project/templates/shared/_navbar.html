@@ -1,6 +1,7 @@
 <nav class="navbar-container">
     <a class="navbar-link" href="{% url 'main:mainpage' %}">Django MTV</a>
     <a class="navbar-link" href="{% url 'main:baskinrobbins' %}">BaskinRobbins</a>
+    <a class="navbar-link" href="{% url 'main:tag-list' %}">Tag</a>
 
     <div class="nav-right">
         {% if user.is_authenticated %}

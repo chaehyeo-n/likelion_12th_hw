@@ -5,7 +5,6 @@
 <form action="{% url 'main:update' post.id %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <p>제목 : <input type="text" name="title" value="{{post.title}}"></p>
-    <p>작성자 : <input type="text" name="writer" value="{{post.writer}}"></p>
     <p>맛 : <input type="text" name="flavor" value="{{post.flavor}}"></p>
     {% if post.image %}
         <p><img src="{{ post.image.url }}" alt="사진" width="100px"></p>
